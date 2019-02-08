@@ -1,18 +1,8 @@
 function findLongestWordLength(str) {
-  let wordArr = str.split(' ');
-  let max = 0;
-  let longestWord = '';
+  const reducer = (acc, str) => Math.max(acc,str.length);
 
-  wordArr.forEach(word => {
-    if(word.length > max) {
-      max = word.length;
-      longestWord = word;
-    }
-  });
-  console.log("longest word :", longestWord);
-  return longestWord.length;
+  return str.split(' ')
+    .reduce(reducer, 0);
 }
 
-findLongestWordLength("The quick brown fox jumped over the lazy dog");
-findLongestWordLength("May the force be with you");
-findLongestWordLength("What if we try a super-long word such as otorhinolaryngology");
+console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
