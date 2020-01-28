@@ -1,0 +1,1 @@
+print(sum(map(int,range(1,int(input())+1))))
