@@ -1,3 +1,5 @@
+import sys
+
 stack = []
 
 def push(n):
@@ -19,7 +21,7 @@ command = {
     "top": top
 }
 
-for case in range(int(input())):
-    cmd_lst = input().split()
+for case in range(int(sys.stdin.readline())):
+    cmd_lst = sys.stdin.readline().split()
     if cmd_lst[0] == "push": push(cmd_lst[1])
     else: command[cmd_lst[0]]()
